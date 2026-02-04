@@ -17,7 +17,7 @@
 
     <div class="video-card">
     <img src="images/" alt="">
-    </div> abwgkdjl
+    </div>
     <script src="Js/script.js"></script>
 </body>
 </html>
