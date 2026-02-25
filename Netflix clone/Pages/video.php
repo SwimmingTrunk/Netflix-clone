@@ -1,3 +1,11 @@
+<?php
+if (isset($_GET['id'])) {
+    $movieId = $_GET['id'];
+} else {
+    die("No video selected.");
+}
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

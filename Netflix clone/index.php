@@ -54,7 +54,7 @@ try {
                 <p><?php echo htmlspecialchars($movie['Description']); ?></p>
                 <small>Genre: <?php echo htmlspecialchars($movie['Genre']); ?></small>
                 <br><br>
-                <a href="pages/video.php" class="btn">Watch Video</a>
+                <a href="pages/video.php?id=<?php echo $movie['ID']; ?>" class="btn">Watch Video</a>
             </div>
         </div>
     <?php endforeach; ?>
