@@ -1,8 +1,32 @@
 <?php
-if (isset($_GET['id'])) {
-    $movieId = $_GET['id'];
-} else {
+if (!isset($_GET['id'])) {
     die("No video selected.");
+}
+
+$movieId = $_GET['id'];
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "netfish";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    
+    $stmt = $conn->prepare("SELECT * FROM movies WHERE id = :id");
+    $stmt->bindParam(':id', $movieId, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $movie = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$movie) {
+        die("Movie not found.");
+    }
+
+} catch(PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
 }
 ?>
 
@@ -29,19 +53,16 @@ if (isset($_GET['id'])) {
 
         <div class="video-container">
             <video controls autoplay muted>
-                <source src="videos/ocean-waves.mp4" type="video/mp4">
-                Your browser does not support the video tag.
+                <source src="<?php echo htmlspecialchars($movie['VideoURL']); ?>">
             </video>
         </div>
 
         <div class="video-details">
-            <h1>Title</h1>
+            <h1><?php echo htmlspecialchars($movie['Name']); ?></h1>
             <div class="meta">
-                <span>Views</span> | 
-                <span>Date</span>
             </div>
             <p class="description">
-                Description
+                <?php echo htmlspecialchars($movie['Description']); ?>
             </p>
         </div>
     </div>
