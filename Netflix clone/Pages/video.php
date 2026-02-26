@@ -53,7 +53,7 @@ try {
 
         <div class="video-container">
             <video controls autoplay muted>
-                <source src="<?php echo htmlspecialchars($movie['VideoURL']); ?>">
+                <source src="<?php echo htmlspecialchars($movie['VideoFile']); ?>">
             </video>
         </div>
 
