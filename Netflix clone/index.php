@@ -48,7 +48,7 @@ try {
 <?php if (count($movies) > 0): ?>
     <?php foreach ($movies as $movie): ?>
         <div class="video-card">
-            <img src="<?php echo htmlspecialchars($movie['ThumbnailURL']); ?>" alt="Movie Thumbnail">
+            <img src="images/<?php echo htmlspecialchars($movie['ThumbnailFile']); ?>" alt="Movie Thumbnail">
             <div class="video-info">
                 <h3><?php echo htmlspecialchars($movie['Name']); ?></h3>
                 <p><?php echo htmlspecialchars($movie['Description']); ?></p>
