@@ -1,3 +1,4 @@
+<?php include 'db_connection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,7 @@
 
         <h2>Create Account</h2>
 
-        <form action="/submit-registration-here" method="POST">
+        <form action="registration_upload.php" method="POST">
 
             <div class="input-group">
                 <label for="reg-email">Email</label>

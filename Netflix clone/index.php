@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start session to track login
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -30,8 +32,15 @@ try {
 <header class="navbar">
     <h1>Aurelius</h1>
     <nav>
-        <a href="pages/login.php">Login</a>
-        <a href="pages/admin.php">Admin</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <span>Welcome, <?= htmlspecialchars($_SESSION['email']) ?></span>
+            <a href="pages/logout.php">Logout</a>
+            <?php if ($_SESSION['admin'] == 1): ?>
+                <a href="pages/admin.php">Admin</a>
+            <?php endif; ?>
+        <?php else: ?>
+            <a href="pages/login.php">Login</a>
+        <?php endif; ?>
     </nav>
 </header>
 

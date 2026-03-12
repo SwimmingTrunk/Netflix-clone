@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Panel - NETFISH</title>
+    <title>Admin Panel - Aurelius</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="navbar">
-        <h1>NETFISH</h1>
+        <h1>Aurelius</h1>
         <nav><a href="../index.php" class="nav-btn">Home</a></nav>
     </header>
 
