@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+
+
     <header class="navbar">
         <h1>Aurelius</h1>
         <nav>
@@ -29,8 +31,12 @@
                 </div>
 
                 <button type="submit" class="login-submit-btn">Login</button>
+
+                <a href="registration.php" class="create-account-btn">Create Account</a>
             </form>
         </div>
     </main>
+
+
 </body>
 </html>
